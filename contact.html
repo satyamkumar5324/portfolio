@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+    body {
+        font-family: Arial;
+        background-color: black;
+    }
+
+        .navbar,a{
+        width:100%;
+        color:white;
+        background-color:greenyellow;
+        font-family: Arial, sans-serif;
+        font-size:xx-large;
+        font-weight: 900;
+        font-style: oblique;
+        display:flex;
+        padding:2px;
+    }
+    .container {
+        width: 450px;
+        margin: 30px auto;
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px ;
+        box-shadow: 0 0 15px green;
+    }
+
+    h1{
+        text-align: center;
+        color:green;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color:green;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+        color:green;
+    }
+
+    gender {
+        width: auto;
+        color:green;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 15px;
+        color:white;
+        background-color: green;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+     <section>
+        <div class="navbar">
+        <a href="about.html">AboutUs</a>
+        <a href="education.html">Education</a>
+        <a href="skill.html">Skill</a>
+        <a href="project.html">Project</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </section>
+
+    <div class="container">
+        <h1>Contact</h1>
+        <form name="studentForm">
+            <label>Name</label>
+            <input type="text" name="studentName">
+
+            <label>Age</label>
+            <input type="number" name="age">
+
+            <label>Gender</label>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+
+            <label>Email</label>
+            <input type="email" name="email">
+            <label>Mobile</label>
+            <input type="tel" name="mobile">
+
+            <label>Message</label>
+            <textarea name="address" rows="4"></textarea>
+
+            <button type="button" onclick="displayStudents()">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        function displayStudents() {
+            let form = document.forms["studentForm"];
+            let name = form.elements["studentName"].value;
+            let roll = form.elements["rollNo"].value;
+            let age = form.elements["age"].value;
+            let course = form.genderElements["course"].value;
+            let email = form.elements["email"].value;
+            let mobile = form.elements["mobile"].value;
+            let address = form.elements["address"].value;
+
+            let genderElements = form.elements["gender"];
+            let gender = "";
+            for (let i = 0; i < genderElements.length; i++) {
+                if (genderElements[i].checked) {
+                    gender = genderElements[i].value;
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "<h3>Student Details</h3>" +
+                "<b>Name:</b>" + name + "<br>" +
+                "<b>Roll Number:</b>" + roll + "<br>" +
+                "<b>Age:</b>" + age + "<br>" +
+                "<b>Gender:</b>" + gender + "<br>" +
+                "<b>Course:</b>" + course + "<br>" +
+                "<b>Email:</b>" + email + "<br>" +
+                "<b>Mobile:</b>" + mobile + "<br>" +
+                "<b>Address:</b>" + address + "<br>";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+     body{
+      /* background-color: black;  */
+    
+    }
+    .navbar,a{
+        width:100%;
+        color:white;
+        background-color:greenyellow;
+        font-family: Arial, sans-serif;
+        font-size:xx-large;
+        font-weight: 900;
+        font-style: oblique;
+        display:flex;
+        padding:2px;
+    }
+    h1{
+        margin-left: 60px; 
+        color:white;
+    }
+
+    .main{
+        display:flex;
+    }   
+    /* form,label,input { 
+        display: flex;
+        flex-direction: row;   /*  Sabhi items ko upar se niche lagata hai 
+        margin-top: 10px;
+        max-width: 500%;
+        background-color: blue;
+        border-box:2px solid green;
+} */
+    .para{
+        font-size: 30px;
+        width:500px;
+        margin-left: 60px;
+        color:white;
+    }
+    .contact{
+        display:flex;
+         margin-left: 60px; 
+    }
+    .email{
+         display:flex;    
+    }
+    .linkedln{
+        display:flex;
+    }
+    .contact2{
+         display:flex;
+           margin-left: 60px;
+    }
+    .phone{
+         display:flex;
+        /* margin-left: 60px;*/
+
+    }
+    .location{
+         display:flex;
+         color:white;
+    }
+</style>
+<body>
+    <section>
+        <div class="navbar">
+        <a href="about.html">AboutUs</a>
+        <a href="education.html">Education</a>
+        <a href="skill.html">Skill</a>
+        <a href="project.html">Project</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </section>
+    <div class="head">
+    <h1>Contact</h1>
+    </div>
+  <div class="main">
+    <p class="para">Wheather you have question about our services,
+        need support ,or want to share your feedback 
+        I am here to assist you every step of the way.
+    </p>
+
+    <form>
+        <h1>Get In Touch</h1>
+        <div class="input">
+        <label>Full Nmae</label>
+        <input type="text" placeholder="Enter your Name">
+        <label>Email address</label>
+        <input type="email" placeholder="Enter your Email">
+        <label>Phone Number</label>
+        <input type="telephone" placeholder="Enter your Number">
+        <label>Message</label>
+        <input type="textarea">
+        </div>
+
+    </form>
+    </div>
+    <div class="contact">
+        <div class="email">
+            <i class="fa-solid fa-envelope"></i>
+            <p class="p1">supriya8265@gmail.com</p>
+        </div>
+        <div class="linkedln">
+            <i class="fa-brands fa-linkedin"></i>
+            <p class="p2">Linkedln</p>
+        </div>
+    </div>
+    <div class="contact2">
+        <div class="phone">
+            <i class="fa-solid fa-square-phone"></i>
+              <p> 912-274-9324 </p>
+        </div>
+          <div class="location">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Location</p>
+        </div>
+    </div>
+</body>
+</html> -->
